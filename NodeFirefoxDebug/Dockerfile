@@ -3,7 +3,7 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 FROM selenium/node-firefox:3.0.1-dysprosium
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+MAINTAINER Selenium <1024920977@qq.com>
 
 USER root
 
@@ -16,7 +16,6 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
   && mkdir -p /root/.vnc \
   && x11vnc -storepasswd secret ~/.vnc/passwd
-
 #=================
 # Locale settings
 #=================
@@ -49,7 +48,12 @@ RUN apt-get update -qqy \
   && apt-get -qqy install \
     fluxbox \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-
+#=========
+#chinese
+#=========
+RUN apt-get update -qqy \
+  && apt-get -qqy --no-install-recommends install \
+    fonts-noto-cjk
 #==============================
 # Scripts to run Selenium Node
 #==============================

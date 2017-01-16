@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+MAINTAINER Selenium <yangle@zs5s.com>
 
 #================================================
 # Customize sources for apt-get
@@ -20,6 +20,7 @@ RUN apt-get update -qqy \
     sudo \
     unzip \
     wget \
+    fonts-noto-cjk \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
   && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
 

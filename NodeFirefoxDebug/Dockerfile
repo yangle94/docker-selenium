@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM selenium/node-firefox:3.0.1-dysprosium
+FROM angley/node-firefox:1.0
 MAINTAINER Selenium <1024920977@qq.com>
 
 USER root
@@ -48,12 +48,6 @@ RUN apt-get update -qqy \
   && apt-get -qqy install \
     fluxbox \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-#=========
-#chinese
-#=========
-RUN apt-get update -qqy \
-  && apt-get -qqy --no-install-recommends install \
-    fonts-noto-cjk
 #==============================
 # Scripts to run Selenium Node
 #==============================

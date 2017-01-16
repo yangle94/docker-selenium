@@ -2,8 +2,8 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM selenium/node-chrome:3.0.1-dysprosium
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+FROM angley/node-chrome:1.0
+MAINTAINER Selenium <yangle@zs5s.com>
 
 USER root
 

@@ -1,4 +1,4 @@
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+MAINTAINER Selenium <yangle@zs5s.com>
 
 USER root
 

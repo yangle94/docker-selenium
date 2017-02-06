@@ -2,8 +2,8 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM selenium/base:3.0.1-dysprosium
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+FROM angley/base:1.1
+MAINTAINER Selenium <1024920977@qq.com>
 
 #========================
 # Selenium Configuration

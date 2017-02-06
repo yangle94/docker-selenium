@@ -29,6 +29,7 @@ RUN apt-get update -qqy \
 #==========
 RUN  mkdir -p /opt/selenium \
   && wget --no-verbose https://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar -O /opt/selenium/selenium-server-standalone.jar
+  && wget --no-verbose http://oiivgasq3.bkt.clouddn.com/CustomServlets.jar -O /opt/selenium/selenium-server-standalone.jar
 
 #========================================
 # Add normal user with passwordless sudo

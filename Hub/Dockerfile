@@ -2,13 +2,9 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<<<<<<< HEAD
+
 FROM angley/base:1.1
 MAINTAINER Selenium <1024920977@qq.com>
-=======
-FROM selenium/base:3.1.0-astatine
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
->>>>>>> 032b1873b5ddc758c2738c1fd3a16017d748024f
 
 #========================
 # Selenium Configuration

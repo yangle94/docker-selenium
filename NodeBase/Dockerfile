@@ -2,13 +2,9 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<<<<<<< HEAD
+
 FROM angley/base:1.0
 MAINTAINER Selenium <yangle@zs5s.com>
-=======
-FROM selenium/base:3.1.0-astatine
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
->>>>>>> 032b1873b5ddc758c2738c1fd3a16017d748024f
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true

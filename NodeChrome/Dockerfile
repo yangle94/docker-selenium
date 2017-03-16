@@ -2,8 +2,13 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<<<<<<< HEAD
 FROM angley/node-base:1.0
 MAINTAINER Selenium <yangle@zs5s.com>
+=======
+FROM selenium/node-base:3.1.0-astatine
+MAINTAINER Selenium <selenium-developers@googlegroups.com>
+>>>>>>> 032b1873b5ddc758c2738c1fd3a16017d748024f
 
 USER root
 
@@ -29,7 +34,7 @@ RUN wget -q -O - http://192.168.1.113:8090/share/linux_signing_key.pub | apt-key
 #==================
 # Chrome webdriver
 #==================
-ARG CHROME_DRIVER_VERSION=2.25
+ARG CHROME_DRIVER_VERSION=2.27
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
   && rm -rf /opt/selenium/chromedriver \
   && unzip /tmp/chromedriver_linux64.zip -d /opt/selenium \
@@ -56,7 +61,8 @@ RUN chmod +x /opt/google/chrome/google-chrome
 
 RUN chown -R seluser:seluser /opt/selenium
 
-USER seluser
 # Following line fixes
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
-ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
+RUN echo "DBUS_SESSION_BUS_ADDRESS=/dev/null" >> /etc/environment
+
+USER seluser

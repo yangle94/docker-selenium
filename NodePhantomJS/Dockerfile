@@ -2,32 +2,25 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<<<<<<< HEAD
-FROM angley/base:1.0
-MAINTAINER Selenium <yangle@zs5s.com>
-=======
-FROM selenium/base:3.1.0-astatine
+FROM selenium/node-base:3.0.1-fermium
 MAINTAINER Selenium <selenium-developers@googlegroups.com>
->>>>>>> 032b1873b5ddc758c2738c1fd3a16017d748024f
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV DEBCONF_NONINTERACTIVE_SEEN true
+USER root
 
 #==============
-# VNC and Xvfb
+# PhantomJS
 #==============
-RUN apt-get update -qqy \
-  && apt-get -qqy install \
-    xvfb \
-  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+RUN apt-get update -y
+RUN apt-get install bzip2 libfreetype6 libfontconfig1  -y
+RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+RUN tar -xvjf phantomjs-1.9.8-linux-x86_64.tar.bz2 && rm phantomjs-1.9.8-linux-x86_64.tar.bz2
+RUN mv /phantomjs-1.9.8-linux-x86_64 /usr/local/phantomjs-1.9.8-linux-x86_64
+RUN ln -s /usr/local/phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 
 #==============================
 # Scripts to run Selenium Node
 #==============================
-COPY \
-  entry_point.sh \
-  functions.sh \
-    /opt/bin/
+COPY entry_point.sh /opt/bin/entry_point.sh
 RUN chmod +x /opt/bin/entry_point.sh
 
 #============================

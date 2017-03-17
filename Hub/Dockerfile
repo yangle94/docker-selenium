@@ -3,7 +3,7 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-FROM angley/base:1.1
+FROM angley/base:2.0
 MAINTAINER Selenium <1024920977@qq.com>
 
 #========================

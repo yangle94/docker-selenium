@@ -3,7 +3,8 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-FROM angley/base:2.0
+# FROM angley/base:2.0
+FROM registry.cn-hangzhou.aliyuncs.com/angle/base
 MAINTAINER Selenium <1024920977@qq.com>
 
 #========================

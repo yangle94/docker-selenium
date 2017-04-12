@@ -3,8 +3,8 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# FROM angley/node-chrome:2.0
-FROM registry.cn-hangzhou.aliyuncs.com/angle/node-chrome:2.0
+# FROM angley/node-chrome:2.1
+FROM registry.cn-hangzhou.aliyuncs.com/angle/node-chrome:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
 
 USER root

@@ -3,8 +3,8 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#FROM angley/node-firefox:2.0
-FROM registry.cn-hangzhou.aliyuncs.com/angle/node-firefox:2.0
+#FROM angley/node-firefox:2.1
+FROM registry.cn-hangzhou.aliyuncs.com/angle/node-firefox:2.1
 MAINTAINER Selenium <1024920977@qq.com>
 
 USER root

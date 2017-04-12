@@ -3,8 +3,8 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# FROM angley/node-base:2.0
-FROM registry.cn-hangzhou.aliyuncs.com/angle/node-base:2.0
+# FROM angley/node-base:2.1
+FROM registry.cn-hangzhou.aliyuncs.com/angle/node-base:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
 
 USER root
@@ -31,7 +31,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 #==================
 # Chrome webdriver
 #==================
-ARG CHROME_DRIVER_VERSION=2.27
+ARG CHROME_DRIVER_VERSION=2.28
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
   && rm -rf /opt/selenium/chromedriver \
   && unzip /tmp/chromedriver_linux64.zip -d /opt/selenium \
@@ -47,6 +47,7 @@ ENV NODE_MAX_INSTANCES 1
 ENV NODE_MAX_SESSION 1
 ENV NODE_REGISTER_CYCLE 5000
 ENV NODE_PORT 5555
+ENV NODE_APPLICATION_NAME ""
 COPY generate_config /opt/selenium/generate_config
 RUN chmod +x /opt/selenium/generate_config
 

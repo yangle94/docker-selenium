@@ -3,7 +3,7 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-FROM angley/node-firefox:2.0
+FROM angley/node-firefox:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
 
 USER root

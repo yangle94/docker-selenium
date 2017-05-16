@@ -19,9 +19,9 @@ function shutdown {
     echo "shutdown complete"
 }
 
-#java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
-java ${JAVA_OPTS} -cp /opt/selenium/CustomServlets.jar:/opt/selenium/selenium-server-standalone.jar org.openqa.grid.selenium.GridLauncherV3 \
-  -servlets org.openqa.grid.web.servlet.custom.CustomServlet \
+java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
+# java ${JAVA_OPTS} -cp /opt/selenium/CustomServlets.jar:/opt/selenium/selenium-server-standalone.jar org.openqa.grid.selenium.GridLauncherV3 \
+#   -servlets org.openqa.grid.web.servlet.custom.CustomServlet \
   -role hub \
   -hubConfig $CONF \
   ${SE_OPTS} &

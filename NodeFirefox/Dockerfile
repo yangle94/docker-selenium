@@ -2,16 +2,18 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 # FROM angley/node-base:2.1
 FROM registry.cn-hangzhou.aliyuncs.com/angle/node-base:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
+LABEL authors=SeleniumHQ
 
 USER root
 
 #=========
 # Firefox
 #=========
-ARG FIREFOX_VERSION=52.0
+ARG FIREFOX_VERSION=54.0
 RUN apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install firefox \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
@@ -26,7 +28,7 @@ RUN apt-get update -qqy \
 #============
 # GeckoDriver
 #============
-ARG GECKODRIVER_VERSION=0.15.0
+ARG GECKODRIVER_VERSION=0.17.0
 RUN wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v$GECKODRIVER_VERSION/geckodriver-v$GECKODRIVER_VERSION-linux64.tar.gz \
   && rm -rf /opt/geckodriver \
   && tar -C /opt -zxf /tmp/geckodriver.tar.gz \
@@ -35,16 +37,14 @@ RUN wget --no-verbose -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geck
   && chmod 755 /opt/geckodriver-$GECKODRIVER_VERSION \
   && ln -fs /opt/geckodriver-$GECKODRIVER_VERSION /usr/bin/geckodriver
 
-#========================
-# Selenium Configuration
-#========================
-ENV NODE_MAX_INSTANCES 1
-ENV NODE_MAX_SESSION 1
-ENV NODE_REGISTER_CYCLE 5000
-ENV NODE_PORT 5555
-ENV NODE_APPLICATION_NAME ""
-COPY generate_config /opt/selenium/generate_config
-RUN chmod +x /opt/selenium/generate_config \
-  && chown -R seluser:seluser /opt/selenium
-
 USER seluser
+
+COPY generate_config /opt/bin/generate_config
+
+# Running this command as sudo just to avoid the message:
+# To run a command as administrator (user "root"), use "sudo <command>". See "man sudo_root" for details.
+# When logging into the container
+RUN sudo echo ""
+
+# Generating config inside the image rather than with entry_point.sh
+RUN /opt/bin/generate_config > /opt/selenium/config.json

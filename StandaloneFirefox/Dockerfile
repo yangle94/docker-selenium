@@ -5,15 +5,13 @@
 
 FROM angley/node-firefox:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
+LABEL authors=SeleniumHQ
 
-USER root
+USER seluser
 
 #====================================
 # Scripts to run Selenium Standalone
 #====================================
 COPY entry_point.sh /opt/bin/entry_point.sh
-RUN chmod +x /opt/bin/entry_point.sh
-
-USER seluser
 
 EXPOSE 4444

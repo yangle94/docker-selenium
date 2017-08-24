@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DEBUG=''
-VERSION=${VERSION:-3.3.1-arsenic}
+VERSION=${VERSION:-3.4.0-francium}
 
 if [ -n "$1" ] && [ $1 == 'debug' ]; then
   DEBUG='-debug'
@@ -24,7 +24,7 @@ echo Building test container image
 docker build -t selenium/test:local ./Test
 
 echo 'Starting Selenium Hub Container...'
-HUB=$(docker run -d selenium/hub:3.3.1-arsenic)
+HUB=$(docker run -d selenium/hub:${VERSION})
 HUB_NAME=$(docker inspect -f '{{ .Name  }}' $HUB | sed s:/::)
 echo 'Waiting for Hub to come online...'
 docker logs -f $HUB &
@@ -59,7 +59,7 @@ function test_node {
     exit 1
   fi
 
-  if [ ! "$CIRCLECI" ==  "true" ]; then
+  if [ ! "${TRAVIS}" ==  "true" ]; then
     echo Removing the test container
     docker rm $TEST_CONTAINER
   fi
@@ -72,7 +72,7 @@ if [ -z $DEBUG ]; then
   test_node phantomjs $DEBUG
 fi
 
-if [ ! "$CIRCLECI" ==  "true" ]; then
+if [ ! "${TRAVIS}" ==  "true" ]; then
   echo Tearing down Selenium Chrome Node container
   docker stop $NODE_CHROME
   docker rm $NODE_CHROME

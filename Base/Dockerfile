@@ -3,6 +3,6 @@ FROM registry.cn-hangzhou.aliyuncs.com/angle/abase:2.1
 MAINTAINER Selenium <yangle@zs5s.com>
 
 
-RUN apt-get update -qqy \
+RUN apt-get -qqy update \
   && apt-get -qqy --no-install-recommends install \
     fonts-noto-cjk 

@@ -6,6 +6,9 @@
 # FROM angley/base:2.1
 FROM registry.cn-hangzhou.aliyuncs.com/angle/base:2.1
 MAINTAINER Selenium <1024920977@qq.com>
+LABEL authors=SeleniumHQ
+
+USER seluser
 
 #========================
 # Selenium Configuration

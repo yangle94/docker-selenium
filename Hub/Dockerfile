@@ -2,9 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-# FROM angley/base:2.1
-FROM selenium/base:3.4.0-francium
+FROM registry.cn-hangzhou.aliyuncs.com/angle/abase:2.1
 LABEL authors=SeleniumHQ
 
 USER seluser

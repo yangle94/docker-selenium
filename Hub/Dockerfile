@@ -3,7 +3,7 @@
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #FROM registry.cn-hangzhou.aliyuncs.com/angle/abase:2.1
-FROM selenium/base
+FROM selenium/base:3.4.0-einsteinium
 LABEL authors=SeleniumHQ
 
 USER seluser

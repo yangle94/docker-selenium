@@ -2,7 +2,8 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM registry.cn-hangzhou.aliyuncs.com/angle/abase:2.1
+#FROM registry.cn-hangzhou.aliyuncs.com/angle/abase:2.1
+FROM selenium/base
 LABEL authors=SeleniumHQ
 
 USER seluser
